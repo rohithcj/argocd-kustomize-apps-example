@@ -3,6 +3,6 @@ kind: Application
 metadata:
   name: guestbook-blue
 spec:
-  sources:
-      path: apps/guestbook/overlays/dev-blue
-      targetRevision: main
+  source:
+    path: apps/guestbook/overlays/dev-blue
+    targetRevision: main
