@@ -11,6 +11,7 @@ patchesJson6902:
    version: v1alpha1
    kind: Application
    name: guestbook-blue
+   namespace: argocd
   patch: |-
     - op: add
       path: /spec/destination/namespace
@@ -20,6 +21,7 @@ patchesJson6902:
    version: v1alpha1
    kind: Application
    name: guestbook-green
+   namespace: argocd
   patch: |-
     - op: add
       path: /spec/destination/namespace
