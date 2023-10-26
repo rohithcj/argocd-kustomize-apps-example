@@ -1,0 +1,8 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: guestbook-green
+spec:
+  sources:
+      path: apps/guestbook/overlays/dev-green
+      targetRevision: main

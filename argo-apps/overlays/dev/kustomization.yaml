@@ -1,0 +1,26 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+bases:
+  - ../../base
+patchesStrategicMerge:
+  - guestbook-app-blue.yaml
+  - guestbook-app-green.yaml
+patchesJson6902:
+- target:
+   group: argoproj.io
+   version: v1alpha1
+   kind: Application
+   name: guestbook-blue
+  patch: |-
+    - op: add
+      path: /spec/destination/namespace
+      value: "guestbook-blue"
+- target:
+   group: argoproj.io
+   version: v1alpha1
+   kind: Application
+   name: guestbook-green
+  patch: |-
+    - op: add
+      path: /spec/destination/namespace
+      value: "guestbook-green"

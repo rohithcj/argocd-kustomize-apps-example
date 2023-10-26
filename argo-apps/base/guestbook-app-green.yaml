@@ -1,0 +1,13 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: guestbook-green
+spec:
+  project: default
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  sources:
+    - repoURL: https://github.com/rohithcj/argocd-kustomize-multienv.git
+      path: apps/guestbook/overlays/ENV_NAME
+      targetRevision: main
