@@ -1,4 +1,5 @@
 # Argocd Multi-environment Example
+**Note: This is not Production grade and simply meant as a demo**
 
 ## Argo Applications Directory Structure
 
